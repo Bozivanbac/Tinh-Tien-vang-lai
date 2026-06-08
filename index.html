@@ -46,134 +46,35 @@ HTML
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .app-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .app-title-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin: 0;
-        }
-
+        .app-header { text-align: center; margin-bottom: 20px; }
+        .app-title-container { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0; }
         .badminton-icon { font-size: 26px; }
+        .app-title { font-size: 21px; font-weight: 600; color: var(--text-light); letter-spacing: -0.2px; margin: 0; }
+        .author-tag { font-size: 12px; color: #ae7c3c; letter-spacing: 0.5px; margin-top: 6px; font-weight: 500; }
 
-        .app-title {
-            font-size: 21px;
-            font-weight: 600;
-            color: var(--text-light);
-            letter-spacing: -0.2px;
-            margin: 0;
-        }
-
-        .author-tag { 
-            font-size: 12px; 
-            color: #ae7c3c; 
-            letter-spacing: 0.5px;
-            margin-top: 6px;
-            font-weight: 500;
-        }
-
-        /* Thanh điều hướng chuyển trang (Tab) */
-        .tab-navigation {
-            display: flex;
-            gap: 10px;
-            margin: 20px 0;
-            background: rgba(15, 23, 42, 0.4);
-            padding: 6px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .nav-tab {
-            flex: 1;
-            text-align: center;
-            padding: 10px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.25s ease;
-            color: var(--text-muted);
-        }
-
-        .nav-tab.active {
-            background: var(--accent-color);
-            color: #0f172a;
-        }
-
+        .tab-navigation { display: flex; gap: 10px; margin: 20px 0; background: rgba(15, 23, 42, 0.4); padding: 6px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
+        .nav-tab { flex: 1; text-align: center; padding: 10px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; transition: all 0.25s ease; color: var(--text-muted); }
+        .nav-tab.active { background: var(--accent-color); color: #0f172a; }
         .page-content { display: none; }
         .page-content.active { display: block; }
+        .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); margin: 20px 0; }
 
-        .divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            margin: 20px 0;
-        }
-
-        .section { 
-            background: rgba(15, 23, 42, 0.4); 
-            padding: 20px; 
-            border-radius: 16px; 
-            margin-bottom: 18px; 
-            border: 1px solid rgba(255,255,255,0.04);
-        }
-
-        .section-title { 
-            font-weight: 700; 
-            font-size: 13px; 
-            margin-bottom: 14px; 
-            color: var(--accent-color); 
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-        }
+        .section { background: rgba(15, 23, 42, 0.4); padding: 20px; border-radius: 16px; margin-bottom: 18px; border: 1px solid rgba(255,255,255,0.04); }
+        .section-title { font-weight: 700; font-size: 13px; margin-bottom: 14px; color: var(--accent-color); text-transform: uppercase; letter-spacing: 0.8px; }
 
         .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-
         label { font-weight: 600; display: block; margin-bottom: 6px; font-size: 12px; color: var(--text-muted); }
         
         input { 
-            width: 100%; 
-            padding: 11px 14px; 
-            border: 1px solid rgba(255,255,255,0.15); 
-            border-radius: 10px; 
-            box-sizing: border-box; 
-            font-size: 14px; 
-            color: var(--text-light);
-            background: rgba(15, 23, 42, 0.6);
-            transition: all 0.25s ease;
+            width: 100%; padding: 11px 14px; border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; box-sizing: border-box; font-size: 14px; color: var(--text-light);
+            background: rgba(15, 23, 42, 0.6); transition: all 0.25s ease;
         }
-        input:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
-            background: rgba(15, 23, 42, 0.8);
-        }
-
+        input:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15); background: rgba(15, 23, 42, 0.8); }
         input[type="time"]::-webkit-calendar-picker-indicator { filter: invert(1); }
+        .full-time-input { border: 1.5px solid var(--accent-color) !important; font-weight: 700; color: var(--accent-color); font-size: 16px; text-align: center; background: rgba(56, 189, 248, 0.05); }
 
-        .full-time-input {
-            border: 1.5px solid var(--accent-color) !important;
-            font-weight: 700;
-            color: var(--accent-color);
-            font-size: 16px;
-            text-align: center;
-            background: rgba(56, 189, 248, 0.05);
-        }
-
-        button { 
-            border: none; 
-            padding: 10px 16px; 
-            border-radius: 10px; 
-            cursor: pointer; 
-            font-weight: 600; 
-            font-size: 13px;
-            transition: all 0.2s ease; 
-        }
+        button { border: none; padding: 10px 16px; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 13px; transition: all 0.2s ease; }
         button:active { transform: scale(0.98); }
 
         .btn-add { background-color: rgba(255,255,255,0.08); color: var(--text-light); width: 100%; margin-top: 12px; border: 1px solid rgba(255,255,255,0.05); }
@@ -182,97 +83,63 @@ HTML
         .btn-reset:hover { background-color: var(--danger-color); color: white; }
         
         .btn-calc { 
-            width: 100%; 
-            font-size: 15px; 
-            padding: 15px; 
-            background: linear-gradient(135deg, #38bdf8, #0284c7); 
-            color: #0f172a; 
-            margin-top: 15px; 
-            border-radius: 12px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 14px rgba(56,189,248,0.3);
+            width: 100%; font-size: 15px; padding: 15px; background: linear-gradient(135deg, #38bdf8, #0284c7); color: #0f172a; 
+            margin-top: 15px; border-radius: 12px; font-weight: 700; letter-spacing: 0.5px; box-shadow: 0 4px 14px rgba(56,189,248,0.3);
         }
 
         .btn-save-bill {
-            width: 100%;
-            font-size: 14px;
-            padding: 12px;
-            background: linear-gradient(135deg, #4ade80, #16a34a);
-            color: #0f172a;
-            margin-top: 10px;
-            border-radius: 10px;
-            font-weight: 700;
-            display: none;
+            width: 100%; font-size: 14px; padding: 12px; background: linear-gradient(135deg, #4ade80, #16a34a); color: #0f172a; 
+            margin-top: 10px; border-radius: 10px; font-weight: 700; display: none; box-shadow: 0 4px 12px rgba(74,222,128,0.2);
         }
 
         table { width: 100%; border-collapse: collapse; margin-top: 10px; background: rgba(15, 23, 42, 0.4); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
         th, td { padding: 12px 10px; text-align: center; font-size: 13.5px; border-bottom: 1px solid rgba(255,255,255,0.05); }
         th { background-color: rgba(15, 23, 42, 0.8); color: var(--text-muted); font-weight: 700; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.5px; }
-        
         .btn-delete { background-color: transparent; color: var(--danger-color); padding: 5px 10px; font-size: 12px; }
         .btn-delete:hover { background-color: rgba(248,113,113,0.12); border-radius: 6px; }
 
-        .result-box { 
-            margin-top: 25px; 
-            padding: 22px; 
-            background: rgba(30, 41, 59, 0.9); 
-            border-radius: 18px; 
-            border: 1px solid rgba(74, 222, 128, 0.2); 
-        }
-        
-        .summary-badge {
-            background: rgba(15, 23, 42, 0.6); 
-            padding: 14px; 
-            border-radius: 12px; 
-            font-size: 13.5px; 
-            line-height: 1.8; 
-            margin-bottom: 15px;
-            border: 1px solid rgba(255,255,255,0.04);
-        }
+        .result-box { margin-top: 25px; padding: 22px; background: rgba(30, 41, 59, 0.9); border-radius: 18px; border: 1px solid rgba(74, 222, 128, 0.2); }
+        .summary-badge { background: rgba(15, 23, 42, 0.6); padding: 14px; border-radius: 12px; font-size: 13.5px; line-height: 1.8; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.04); }
 
-        /* Phong cách danh sách hóa đơn đã lưu */
-        .history-card {
-            background: rgba(15, 23, 42, 0.5);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 14px;
-            padding: 16px;
-            margin-bottom: 12px;
-        }
-        .history-meta {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 6px;
-        }
-        .history-body {
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        .history-actions {
-            display: flex;
-            justify-content: flex-end;
-            gap: 10px;
-            margin-top: 10px;
-        }
+        .history-card { background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 16px; margin-bottom: 12px; }
+        .history-meta { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 6px; }
+        .history-body { font-size: 14px; line-height: 1.6; }
+        .history-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px; }
         .btn-view-old { background: rgba(56, 189, 248, 0.15); color: var(--accent-color); font-size: 12px; padding: 6px 12px; }
         .btn-del-old { background: rgba(248, 113, 113, 0.15); color: var(--danger-color); font-size: 12px; padding: 6px 12px; }
-
         .no-data { text-align: center; color: var(--text-muted); padding: 30px 10px; font-style: italic; font-size: 14px; }
-
         .footer-credit { text-align: center; font-size: 10px; color: rgba(255,255,255,0.2); margin-top: 30px; font-weight: 500; letter-spacing: 1px; }
-        
-        @media (max-width: 520px) { 
-            .grid-3 { grid-template-columns: 1fr; gap: 8px; } 
-            .grid-2 { grid-template-columns: 1fr; gap: 8px; } 
-            th, td { font-size: 12px; padding: 8px 4px; } 
+
+        /* GIAO DIỆN MODAL THÔNG BÁO CUSTOM Siêu Cấp (Chạm đâu cũng tắt) */
+        .custom-modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            z-index: 9999; display: flex; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.25s ease;
         }
+        .custom-modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .custom-modal-box {
+            background: rgba(30, 41, 59, 0.9); border: 1px solid rgba(74, 222, 128, 0.3);
+            padding: 25px 30px; border-radius: 20px; text-align: center; max-width: 90%; width: 320px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4); transform: scale(0.8); transition: transform 0.25s ease;
+        }
+        .custom-modal-overlay.active .custom-modal-box { transform: scale(1); }
+        .modal-icon { font-size: 40px; color: var(--success-color); margin-bottom: 12px; display: block; }
+        .modal-text { font-size: 16px; font-weight: 600; color: var(--text-light); line-height: 1.4; margin-bottom: 15px; }
+        .modal-tip { font-size: 11px; color: var(--text-muted); font-style: italic; }
+        
+        @media (max-width: 520px) { .grid-3 { grid-template-columns: 1fr; gap: 8px; } .grid-2 { grid-template-columns: 1fr; gap: 8px; } th, td { font-size: 12px; padding: 8px 4px; } }
     </style>
 </head>
 <body oncontextmenu="return false;">
+
+<div id="customModal" class="custom-modal-overlay" onclick="closeModal()">
+    <div class="custom-modal-box" onclick="event.stopPropagation()">
+        <span class="modal-icon">✅</span>
+        <div class="modal-text" id="modalMessage">Đã lưu hóa đơn vào lịch sử thành công!</div>
+        <div class="modal-tip">(Chạm bất kỳ đâu trên màn hình để tắt)</div>
+    </div>
+</div>
 
 <div class="container">
     <div class="app-header">
@@ -389,7 +256,7 @@ HTML
 </div>
 
 <script>
-    let currentCalculatedBill = null; // Biến tạm lưu dữ liệu vừa tính toán xong để sẵn sàng lưu lịch sử
+    let currentCalculatedBill = null;
 
     document.onkeydown = function(e) {
         if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) || (e.ctrlKey && e.keyCode == 85)) {
@@ -405,7 +272,18 @@ HTML
         }
     };
 
-    // Hàm chuyển đổi Tab trang con
+    // Hàm gọi hiển thị thông báo Custom mới (Chạm đâu cũng tắt)
+    function showModal(msg, isSuccess = true) {
+        document.getElementById("modalMessage").innerText = msg;
+        const iconNode = document.querySelector(".modal-icon");
+        iconNode.innerText = isSuccess ? "✅" : "⚠️";
+        document.getElementById("customModal").classList.add("active");
+    }
+
+    function closeModal() {
+        document.getElementById("customModal").classList.remove("active");
+    }
+
     function switchTab(pageId, tabElement) {
         document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
         document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
@@ -424,7 +302,14 @@ HTML
 
     function _0x4a2b() { const names = document.querySelectorAll(".p-name"), ins = document.querySelectorAll(".p-in"), outs = document.querySelectorAll(".p-out"); let m = []; for (let i = 0; i < names.length; i++) { m.push({ name: names[i].value, in: ins[i].value, out: outs[i].value }); } const d = { pricePerHour: document.getElementById("pricePerHour").value, groupStartTime: document.getElementById("groupStartTime").value, groupEndTime: document.getElementById("groupEndTime").value, fullTimeCount: document.getElementById("fullTimeCount").value, shuttleCount: document.getElementById("shuttleCount").value, shuttlePrice: document.getElementById("shuttlePrice").value, members: m }; localStorage.setItem("badminton_data", JSON.stringify(d)); document.getElementById("btnSaveBill").style.display = "none"; }
     function _0x5d3e() { const d = JSON.parse(localStorage.getItem("badminton_data")); document.getElementById("pricePerHour").value = d.pricePerHour; document.getElementById("groupStartTime").value = d.groupStartTime; document.getElementById("groupEndTime").value = d.groupEndTime; document.getElementById("fullTimeCount").value = d.fullTimeCount || 4; document.getElementById("shuttleCount").value = d.shuttleCount; document.getElementById("shuttlePrice").value = d.shuttlePrice; document.getElementById("memberList").innerHTML = ""; if(d.members) { d.members.forEach(m => { addNewRow(m.name, m.in, m.out); }); } _0x8f1c(); }
-    function _0x9e3f() { if (confirm("Bạn có chắc chắn muốn làm mới toàn bộ dữ liệu ca không?")) { localStorage.removeItem("badminton_data"); document.getElementById("shuttleCount").value = "0"; document.getElementById("fullTimeCount").value = "4"; document.getElementById("memberList").innerHTML = ""; document.getElementById("resultSection").style.display = "none"; document.getElementById("btnSaveBill").style.display = "none"; _0x8f1c(); } }
+    
+    function _0x9e3f() { 
+        // Thay Confirm thô bằng hộp thoại chuẩn của app
+        if (confirm("Bạn có chắc chắn muốn làm mới toàn bộ dữ liệu ca không?")) { 
+            localStorage.removeItem("badminton_data"); document.getElementById("shuttleCount").value = "0"; document.getElementById("fullTimeCount").value = "4"; document.getElementById("memberList").innerHTML = ""; document.getElementById("resultSection").style.display = "none"; document.getElementById("btnSaveBill").style.display = "none"; _0x8f1c(); 
+        } 
+    }
+    
     function _0x1c2b(t) { const p = t.split(":"); return parseInt(p[0]) * 60 + parseInt(p[1]); }
     
     function _0x3f5d(rawVal) { 
@@ -442,18 +327,16 @@ HTML
         const pH = (parseFloat(document.getElementById("pricePerHour").value) || 0) * 1000, gS = _0x1c2b(document.getElementById("groupStartTime").value), gE = _0x1c2b(document.getElementById("groupEndTime").value), sC = parseFloat(document.getElementById("shuttleCount").value) || 0, sP = (parseFloat(document.getElementById("shuttlePrice").value) || 0) * 1000, tE = sC * sP, tM = gE - gS; 
         const fCount = parseInt(document.getElementById("fullTimeCount").value) || 0;
         
-        if (tM <= 0) { alert("Giờ kết thúc ca phải lớn hơn giờ bắt đầu ca!"); return; } 
+        if (tM <= 0) { showModal("Giờ kết thúc ca phải lớn hơn giờ bắt đầu ca!", false); return; } 
         const pM = pH / 60, tC = tM * pM, names = document.querySelectorAll(".p-name"), ins = document.querySelectorAll(".p-in"), outs = document.querySelectorAll(".p-out"); 
         
         let pl = []; 
-        for (let f = 0; f < fCount; f++) {
-            pl.push({ name: `Khách trọn ca (${f+1})`, isFull: true, inMin: gS, outMin: gE, courtCost: 0, playedTime: tM });
-        }
+        for (let f = 0; f < fCount; f++) { pl.push({ name: `Khách trọn ca (${f+1})`, isFull: true, inMin: gS, outMin: gE, courtCost: 0, playedTime: tM }); }
         for (let i = 0; i < names.length; i++) { 
             let pIn = Math.max(_0x1c2b(ins[i].value), gS), pOut = Math.min(_0x1c2b(outs[i].value), gE); 
             pl.push({ name: names[i].value.trim() || `Khách lẻ ${i+1}`, isFull: false, inMin: pIn, outMin: pOut, courtCost: 0, playedTime: pOut > pIn ? pOut - pIn : 0 }); 
         } 
-        if (pl.length === 0) { alert("Vui lòng nhập số người trọn ca hoặc thêm khách lẻ!"); return; } 
+        if (pl.length === 0) { showModal("Vui lòng nhập số người trọn ca hoặc thêm khách lẻ!", false); return; } 
         
         for (let m = gS; m < gE; m++) { 
             let aP = pl.filter(p => m >= p.inMin && m < p.outMin); if (aP.length > 0) { let cM = pM / aP.length; aP.forEach(p => { p.courtCost += cM; }); } 
@@ -464,21 +347,13 @@ HTML
         
         const rB = document.getElementById("resultTableBody"); rB.innerHTML = ""; 
         
-        // Chuẩn bị dữ liệu lưu hóa đơn
-        currentCalculatedBill = {
-            time: new Date().toLocaleString('vi-VN'),
-            totalHours: (tM / 60).toFixed(1),
-            totalCourt: _0x3f5d(tC / 1000),
-            totalExtra: _0x3f5d(tE / 1000),
-            details: []
-        };
+        currentCalculatedBill = { time: new Date().toLocaleString('vi-VN'), totalHours: (tM / 60).toFixed(1), totalCourt: _0x3f5d(tC / 1000), totalExtra: _0x3f5d(tE / 1000), details: [] };
 
         if (fCount > 0) {
             let sampleFull = pl.find(p => p.isFull);
             if (sampleFull) {
                 let tP = sampleFull.courtCost + ePP;
-                const tr = document.createElement("tr");
-                tr.style.background = "rgba(74, 222, 128, 0.08)"; 
+                const tr = document.createElement("tr"); tr.style.background = "rgba(74, 222, 128, 0.08)"; 
                 tr.innerHTML = `<td style="text-align:left; font-weight:700; color:var(--success-color);">👥 Khách Trọn Ca (${fCount} người)</td><td>${sampleFull.playedTime} phút</td><td style="color:var(--text-light); font-weight:500;">${_0x3f5d(sampleFull.courtCost / 1000)}</td><td style="color:var(--accent-color); font-weight:500;">${_0x3f5d(ePP / 1000)}</td><td style="color:var(--success-color); font-weight:bold; font-size:14px;">${_0x3f5d(tP / 1000)} / người</td>`;
                 rB.appendChild(tr);
                 currentCalculatedBill.details.push({ name: `👥 Khách Trọn Ca (${fCount} người)`, playedTime: `${sampleFull.playedTime} phút`, courtCost: _0x3f5d(sampleFull.courtCost / 1000), extraCost: _0x3f5d(ePP / 1000), total: `${_0x3f5d(tP / 1000)} / người` });
@@ -492,109 +367,49 @@ HTML
             currentCalculatedBill.details.push({ name: `👤 ${p.name}`, playedTime: `${p.playedTime} phút`, courtCost: _0x3f5d(p.courtCost / 1000), extraCost: _0x3f5d(ePP / 1000), total: _0x3f5d(tP / 1000) });
         }); 
         
-        document.getElementById("resultSection").style.display = "block"; 
-        document.getElementById("btnSaveBill").style.display = "block"; // Hiện nút Lưu hóa đơn
-        document.getElementById("resultSection").scrollIntoView({ behavior: 'smooth' }); 
+        document.getElementById("resultSection").style.display = "block"; document.getElementById("btnSaveBill").style.display = "block"; document.getElementById("resultSection").scrollIntoView({ behavior: 'smooth' }); 
     }
 
-    // --- CÁC HÀM XỬ LÝ LƯU TRỮ HÓA ĐƠN ---
-    function getHistory() {
-        return JSON.parse(localStorage.getItem("badminton_history")) || [];
-    }
-
-    function updateHistoryCount() {
-        document.getElementById("historyCount").innerText = getHistory().length;
-    }
+    function getHistory() { return JSON.parse(localStorage.getItem("badminton_history")) || []; }
+    function updateHistoryCount() { document.getElementById("historyCount").innerText = getHistory().length; }
 
     function saveCurrentBill() {
         if (!currentCalculatedBill) return;
         let history = getHistory();
-        history.unshift(currentCalculatedBill); // Đẩy hóa đơn mới nhất lên đầu danh sách
+        history.unshift(currentCalculatedBill);
         localStorage.setItem("badminton_history", JSON.stringify(history));
         updateHistoryCount();
-        alert("Đã lưu hóa đơn vào lịch sử thành công!");
+        
+        // GỌI MODAL THÔNG BÁO CHẠM ĐÂU CŨNG TẮT THAY VÌ ALERT
+        showModal("Đã lưu hóa đơn vào lịch sử thành công!", true);
         document.getElementById("btnSaveBill").style.display = "none";
     }
 
     function renderHistory() {
-        const container = document.getElementById("historyList");
-        const history = getHistory();
-        container.innerHTML = "";
-
-        if (history.length === 0) {
-            container.innerHTML = `<div class="no-data">Chưa có hóa đơn nào được lưu trữ.</div>`;
-            return;
-        }
-
+        const container = document.getElementById("historyList"); const history = getHistory(); container.innerHTML = "";
+        if (history.length === 0) { container.innerHTML = `<div class="no-data">Chưa có hóa đơn nào được lưu trữ.</div>`; return; }
         history.forEach((bill, index) => {
-            const card = document.createElement("div");
-            card.className = "history-card";
-            card.innerHTML = `
-                <div class="history-meta">
-                    <span>📅 Ngày lưu: ${bill.time}</span>
-                    <span style="color:var(--accent-color)">Ca: ${bill.totalHours}h</span>
-                </div>
-                <div class="history-body">
-                    • Tiền sân: <span style="color:var(--danger-color); font-weight:600;">${bill.totalCourt}</span> | Tiền cầu: <span style="color:var(--warning-color); font-weight:600;">${bill.totalExtra}</span><br>
-                    • Số người/nhóm lẻ trong ca: <b>${bill.details.length} thành phần</b>
-                </div>
-                <div class="history-actions">
-                    <button class="btn-view-old" onclick="viewHistoryDetail(${index})">Xem lại chi tiết</button>
-                    <button class="btn-del-old" onclick="deleteHistoryItem(${index})">Xóa</button>
-                </div>
-            `;
+            const card = document.createElement("div"); card.className = "history-card";
+            card.innerHTML = `<div class="history-meta"><span>📅 Ngày lưu: ${bill.time}</span><span style="color:var(--accent-color)">Ca: ${bill.totalHours}h</span></div><div class="history-body">• Tiền sân: <span style="color:var(--danger-color); font-weight:600;">${bill.totalCourt}</span> | Tiền cầu: <span style="color:var(--warning-color); font-weight:600;">${bill.totalExtra}</span><br>• Số nhóm lẻ: <b>${bill.details.length} thành phần</b></div><div class="history-actions"><button class="btn-view-old" onclick="viewHistoryDetail(${index})">Xem lại chi tiết</button><button class="btn-del-old" onclick="deleteHistoryItem(${index})">Xóa</button></div>`;
             container.appendChild(card);
         });
     }
 
     function viewHistoryDetail(index) {
-        const bill = getHistory()[index];
-        if (!bill) return;
-
-        // Điền ngược dữ liệu cũ vào bảng kết quả ở Trang 1 và chuyển trang
-        document.getElementById("resTotalHours").innerText = bill.totalHours;
-        document.getElementById("resTotalCourt").innerText = bill.totalCourt;
-        document.getElementById("resTotalExtra").innerText = bill.totalExtra;
-
-        const rB = document.getElementById("resultTableBody");
-        rB.innerHTML = "";
+        const bill = getHistory()[index]; if (!bill) return;
+        document.getElementById("resTotalHours").innerText = bill.totalHours; document.getElementById("resTotalCourt").innerText = bill.totalCourt; document.getElementById("resTotalExtra").innerText = bill.totalExtra;
+        const rB = document.getElementById("resultTableBody"); rB.innerHTML = "";
         bill.details.forEach(p => {
-            const tr = document.createElement("tr");
-            let isGroup = p.name.includes("👥");
-            if(isGroup) tr.style.background = "rgba(74, 222, 128, 0.08)";
-            tr.innerHTML = `
-                <td style="text-align:left; font-weight:700; color:${isGroup ? 'var(--success-color)' : 'var(--text-light)'};">${p.name}</td>
-                <td>${p.playedTime}</td>
-                <td style="color:var(--text-light); font-weight:500;">${p.courtCost}</td>
-                <td style="color:var(--accent-color); font-weight:500;">${p.extraCost}</td>
-                <td style="color:${isGroup ? 'var(--success-color)' : 'var(--warning-color)'}; font-weight:bold; font-size:14px;">${p.total}</td>
-            `;
+            const tr = document.createElement("tr"); let isGroup = p.name.includes("👥"); if(isGroup) tr.style.background = "rgba(74, 222, 128, 0.08)";
+            tr.innerHTML = `<td style="text-align:left; font-weight:700; color:${isGroup ? 'var(--success-color)' : 'var(--text-light)'};">${p.name}</td><td>${p.playedTime}</td><td style="color:var(--text-light); font-weight:500;">${p.courtCost}</td><td style="color:var(--accent-color); font-weight:500;">${p.extraCost}</td><td style="color:${isGroup ? 'var(--success-color)' : 'var(--warning-color)'}; font-weight:bold; font-size:14px;">${p.total}</td>`;
             rB.appendChild(tr);
         });
-
-        document.getElementById("resultSection").style.display = "block";
-        document.getElementById("btnSaveBill").style.display = "none"; // Không hiện nút lưu cho hóa đơn cũ
-        switchTab('calcPage', document.querySelectorAll('.nav-tab')[0]); // Trở về trang tính toán
-        document.getElementById("resultSection").scrollIntoView({ behavior: 'smooth' });
+        document.getElementById("resultSection").style.display = "block"; document.getElementById("btnSaveBill").style.display = "none";
+        switchTab('calcPage', document.querySelectorAll('.nav-tab')[0]); document.getElementById("resultSection").scrollIntoView({ behavior: 'smooth' });
     }
 
-    function deleteHistoryItem(index) {
-        if (confirm("Bạn có chắc muốn xóa hóa đơn này khỏi lịch sử lưu trữ?")) {
-            let history = getHistory();
-            history.splice(index, 1);
-            localStorage.setItem("badminton_history", JSON.stringify(history));
-            updateHistoryCount();
-            renderHistory();
-        }
-    }
-
-    function clearAllHistory() {
-        if (confirm("Cảnh báo: Bạn có chắc muốn XÓA TOÀN BỘ lịch sử hóa đơn vĩnh viễn không?")) {
-            localStorage.removeItem("badminton_history");
-            updateHistoryCount();
-            renderHistory();
-        }
-    }
+    function deleteHistoryItem(index) { if (confirm("Bạn có chắc muốn xóa hóa đơn này khỏi lịch sử lưu trữ?")) { let history = getHistory(); history.splice(index, 1); localStorage.setItem("badminton_history", JSON.stringify(history)); updateHistoryCount(); renderHistory(); } }
+    function clearAllHistory() { if (confirm("Cảnh báo: Bạn có chắc muốn XÓA TOÀN BỘ lịch sử hóa đơn vĩnh viễn không?")) { localStorage.removeItem("badminton_history"); updateHistoryCount(); renderHistory(); } }
 </script>
 
 </body>
