@@ -110,7 +110,6 @@ HTML
         .no-data { text-align: center; color: var(--text-muted); padding: 30px 10px; font-style: italic; font-size: 14px; }
         .footer-credit { text-align: center; font-size: 10px; color: rgba(255,255,255,0.2); margin-top: 30px; font-weight: 500; letter-spacing: 1px; }
 
-        /* GIAO DIỆN MODAL THÔNG BÁO CUSTOM Siêu Cấp (Chạm đâu cũng tắt) */
         .custom-modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
@@ -272,7 +271,6 @@ HTML
         }
     };
 
-    // Hàm gọi hiển thị thông báo Custom mới (Chạm đâu cũng tắt)
     function showModal(msg, isSuccess = true) {
         document.getElementById("modalMessage").innerText = msg;
         const iconNode = document.querySelector(".modal-icon");
@@ -280,9 +278,7 @@ HTML
         document.getElementById("customModal").classList.add("active");
     }
 
-    function closeModal() {
-        document.getElementById("customModal").classList.remove("active");
-    }
+    function closeModal() { document.getElementById("customModal").classList.remove("active"); }
 
     function switchTab(pageId, tabElement) {
         document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
@@ -302,14 +298,7 @@ HTML
 
     function _0x4a2b() { const names = document.querySelectorAll(".p-name"), ins = document.querySelectorAll(".p-in"), outs = document.querySelectorAll(".p-out"); let m = []; for (let i = 0; i < names.length; i++) { m.push({ name: names[i].value, in: ins[i].value, out: outs[i].value }); } const d = { pricePerHour: document.getElementById("pricePerHour").value, groupStartTime: document.getElementById("groupStartTime").value, groupEndTime: document.getElementById("groupEndTime").value, fullTimeCount: document.getElementById("fullTimeCount").value, shuttleCount: document.getElementById("shuttleCount").value, shuttlePrice: document.getElementById("shuttlePrice").value, members: m }; localStorage.setItem("badminton_data", JSON.stringify(d)); document.getElementById("btnSaveBill").style.display = "none"; }
     function _0x5d3e() { const d = JSON.parse(localStorage.getItem("badminton_data")); document.getElementById("pricePerHour").value = d.pricePerHour; document.getElementById("groupStartTime").value = d.groupStartTime; document.getElementById("groupEndTime").value = d.groupEndTime; document.getElementById("fullTimeCount").value = d.fullTimeCount || 4; document.getElementById("shuttleCount").value = d.shuttleCount; document.getElementById("shuttlePrice").value = d.shuttlePrice; document.getElementById("memberList").innerHTML = ""; if(d.members) { d.members.forEach(m => { addNewRow(m.name, m.in, m.out); }); } _0x8f1c(); }
-    
-    function _0x9e3f() { 
-        // Thay Confirm thô bằng hộp thoại chuẩn của app
-        if (confirm("Bạn có chắc chắn muốn làm mới toàn bộ dữ liệu ca không?")) { 
-            localStorage.removeItem("badminton_data"); document.getElementById("shuttleCount").value = "0"; document.getElementById("fullTimeCount").value = "4"; document.getElementById("memberList").innerHTML = ""; document.getElementById("resultSection").style.display = "none"; document.getElementById("btnSaveBill").style.display = "none"; _0x8f1c(); 
-        } 
-    }
-    
+    function _0x9e3f() { if (confirm("Bạn có chắc chắn muốn làm mới toàn bộ dữ liệu ca không?")) { localStorage.removeItem("badminton_data"); document.getElementById("shuttleCount").value = "0"; document.getElementById("fullTimeCount").value = "4"; document.getElementById("memberList").innerHTML = ""; document.getElementById("resultSection").style.display = "none"; document.getElementById("btnSaveBill").style.display = "none"; _0x8f1c(); } }
     function _0x1c2b(t) { const p = t.split(":"); return parseInt(p[0]) * 60 + parseInt(p[1]); }
     
     function _0x3f5d(rawVal) { 
@@ -323,7 +312,14 @@ HTML
         document.getElementById("lblSubTotalShuttle").innerText = _0x3f5d(t); 
     }
     
+    // LOGIC TÍNH TOÁN VÀ TỰ ĐỘNG RESET BẢNG KẾT QUẢ CŨ
     function _0x7c3a() { 
+        // 1. Tự động ẩn vùng kết quả cũ và xóa trắng dữ liệu bảng trước khi tính
+        document.getElementById("resultSection").style.display = "none";
+        document.getElementById("btnSaveBill").style.display = "none";
+        const rB = document.getElementById("resultTableBody"); 
+        rB.innerHTML = ""; 
+
         const pH = (parseFloat(document.getElementById("pricePerHour").value) || 0) * 1000, gS = _0x1c2b(document.getElementById("groupStartTime").value), gE = _0x1c2b(document.getElementById("groupEndTime").value), sC = parseFloat(document.getElementById("shuttleCount").value) || 0, sP = (parseFloat(document.getElementById("shuttlePrice").value) || 0) * 1000, tE = sC * sP, tM = gE - gS; 
         const fCount = parseInt(document.getElementById("fullTimeCount").value) || 0;
         
@@ -345,8 +341,6 @@ HTML
         const ePP = tE / pl.length; 
         document.getElementById("resTotalHours").innerText = (tM / 60).toFixed(1); document.getElementById("resTotalCourt").innerText = _0x3f5d(tC / 1000); document.getElementById("resTotalExtra").innerText = _0x3f5d(tE / 1000); 
         
-        const rB = document.getElementById("resultTableBody"); rB.innerHTML = ""; 
-        
         currentCalculatedBill = { time: new Date().toLocaleString('vi-VN'), totalHours: (tM / 60).toFixed(1), totalCourt: _0x3f5d(tC / 1000), totalExtra: _0x3f5d(tE / 1000), details: [] };
 
         if (fCount > 0) {
@@ -367,7 +361,10 @@ HTML
             currentCalculatedBill.details.push({ name: `👤 ${p.name}`, playedTime: `${p.playedTime} phút`, courtCost: _0x3f5d(p.courtCost / 1000), extraCost: _0x3f5d(ePP / 1000), total: _0x3f5d(tP / 1000) });
         }); 
         
-        document.getElementById("resultSection").style.display = "block"; document.getElementById("btnSaveBill").style.display = "block"; document.getElementById("resultSection").scrollIntoView({ behavior: 'smooth' }); 
+        // Hiện lại khối kết quả mới tinh
+        document.getElementById("resultSection").style.display = "block"; 
+        document.getElementById("btnSaveBill").style.display = "block"; 
+        document.getElementById("resultSection").scrollIntoView({ behavior: 'smooth' }); 
     }
 
     function getHistory() { return JSON.parse(localStorage.getItem("badminton_history")) || []; }
@@ -379,8 +376,6 @@ HTML
         history.unshift(currentCalculatedBill);
         localStorage.setItem("badminton_history", JSON.stringify(history));
         updateHistoryCount();
-        
-        // GỌI MODAL THÔNG BÁO CHẠM ĐÂU CŨNG TẮT THAY VÌ ALERT
         showModal("Đã lưu hóa đơn vào lịch sử thành công!", true);
         document.getElementById("btnSaveBill").style.display = "none";
     }
@@ -390,7 +385,7 @@ HTML
         if (history.length === 0) { container.innerHTML = `<div class="no-data">Chưa có hóa đơn nào được lưu trữ.</div>`; return; }
         history.forEach((bill, index) => {
             const card = document.createElement("div"); card.className = "history-card";
-            card.innerHTML = `<div class="history-meta"><span>📅 Ngày lưu: ${bill.time}</span><span style="color:var(--accent-color)">Ca: ${bill.totalHours}h</span></div><div class="history-body">• Tiền sân: <span style="color:var(--danger-color); font-weight:600;">${bill.totalCourt}</span> | Tiền cầu: <span style="color:var(--warning-color); font-weight:600;">${bill.totalExtra}</span><br>• Số nhóm lẻ: <b>${bill.details.length} thành phần</b></div><div class="history-actions"><button class="btn-view-old" onclick="viewHistoryDetail(${index})">Xem lại chi tiết</button><button class="btn-del-old" onclick="deleteHistoryItem(${index})">Xóa</button></div>`;
+            card.innerHTML = `<div class="history-meta"><span>📅 Ngày lưu: ${bill.time}</span><span style="color:var(--accent-color)">Ca: ${bill.totalHours}h</span></div><div class="history-body">• Tiền sân: <span style="color:var(--danger-color); font-weight:600;">${bill.totalCourt}</span> | Tiền cầu: <span style="color:var(--warning-color); font-weight:600;">${bill.totalExtra}</span><br>• Chi tiết: <b>${bill.details.length} thành phần</b></div><div class="history-actions"><button class="btn-view-old" onclick="viewHistoryDetail(${index})">Xem lại chi tiết</button><button class="btn-del-old" onclick="deleteHistoryItem(${index})">Xóa</button></div>`;
             container.appendChild(card);
         });
     }
