@@ -4,7 +4,7 @@ HTML
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tính Tiền Cầu Lông - PRO V1.0</title>
+    <title>Smart Court - Developed by Van Bac</title>
     <style>
         :root { 
             --accent-color: #0d6efd; 
@@ -18,12 +18,11 @@ HTML
         
         body { 
             margin: 0; 
-            padding: 20px 10px; 
+            padding: 30px 10px; 
             color: var(--text-dark); 
             user-select: none; 
             -webkit-user-select: none;
             min-height: 100vh;
-            /* Tạo hình nền giả lập sân cầu lông 2D bằng CSS */
             background-color: #bce3e6;
             background-image: 
                 linear-gradient(90deg, transparent 49%, rgba(255,255,255,0.4) 49%, rgba(255,255,255,0.4) 51%, transparent 51%),
@@ -32,93 +31,120 @@ HTML
                 linear-gradient(90deg, transparent 85%, rgba(255,255,255,0.2) 85%, rgba(255,255,255,0.2) 86%, transparent 86%),
                 linear-gradient(0deg, transparent 15%, rgba(255,255,255,0.2) 15%, rgba(255,255,255,0.2) 16%, transparent 16%),
                 linear-gradient(0deg, transparent 85%, rgba(255,255,255,0.2) 85%, rgba(255,255,255,0.2) 86%, transparent 86%);
-            background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+            background-size: 100% 100%;
             background-attachment: fixed;
         }
 
-        /* Khung kính mờ sang chảnh phong cách hiện đại */
         .container { 
             max-width: 680px; 
             margin: 0 auto; 
-            background: rgba(255, 255, 255, 0.85); 
-            backdrop-filter: blur(12px); 
-            -webkit-backdrop-filter: blur(12px);
-            padding: 25px; 
-            border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.82); 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px);
+            padding: 30px 25px; 
+            border-radius: 24px; 
+            box-shadow: 0 20px 40px rgba(17, 78, 96, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
-        h2 { 
-            text-align: center; 
-            color: #114e60; 
-            margin: 0 0 5px 0; 
-            font-size: 24px; 
+        /* Giao diện tiêu đề Premium tích hợp Tên Nhà Phát Triển */
+        .app-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .app-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 26px;
             font-weight: 800;
-            letter-spacing: -0.5px;
+            color: #114e60;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        .app-brand span {
+            font-weight: 300;
+            color: #06b6d4;
+        }
+
+        .app-sub {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 4px;
+            letter-spacing: 0.3px;
         }
 
         .author-tag { 
-            text-align: center; 
-            font-size: 13px; 
-            color: #557c83; 
-            margin-bottom: 25px; 
-            padding-bottom: 12px;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
+            font-size: 11px; 
+            color: #b45309; /* Màu vàng kim sang trọng */
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 8px;
+            font-weight: 700;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.06), transparent);
+            margin: 20px 0;
         }
 
         .section { 
-            background: rgba(255, 255, 255, 0.6); 
-            padding: 18px; 
-            border-radius: 14px; 
+            background: rgba(255, 255, 255, 0.5); 
+            padding: 20px; 
+            border-radius: 16px; 
             margin-bottom: 18px; 
-            border: 1px solid rgba(0,0,0,0.03);
-            box-shadow: 0 2px 6px rgba(0,0,0,0.01);
+            border: 1px solid rgba(255,255,255,0.5);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.01);
         }
 
         .section-title { 
             font-weight: 700; 
-            font-size: 14px; 
-            margin-bottom: 12px; 
-            color: #145374; 
+            font-size: 13px; 
+            margin-bottom: 14px; 
+            color: #1e3a8a; 
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
         }
 
         .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
-        label { font-weight: 600; display: block; margin-bottom: 6px; font-size: 12.5px; color: #334155; }
+        label { font-weight: 600; display: block; margin-bottom: 6px; font-size: 12px; color: #475569; }
         
         input { 
             width: 100%; 
-            padding: 11px 12px; 
-            border: 1px solid #cbd5e1; 
-            border-radius: 8px; 
+            padding: 11px 14px; 
+            border: 1px solid #d1d5db; 
+            border-radius: 10px; 
             box-sizing: border-box; 
             font-size: 14px; 
             color: var(--text-dark);
-            background: #ffffff;
-            transition: all 0.2s ease;
+            background: rgba(255,255,255,0.9);
+            transition: all 0.25s ease;
         }
         input:focus {
             outline: none;
             border-color: #06b6d4;
-            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
+            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.12);
+            background: #fff;
         }
 
         .full-time-input {
-            border: 2px solid #06b6d4 !important;
-            font-weight: bold;
+            border: 1.5px solid #06b6d4 !important;
+            font-weight: 700;
             color: #0891b2;
             font-size: 16px;
             text-align: center;
+            background: rgba(236, 254, 255, 0.6);
         }
 
         button { 
             border: none; 
             padding: 10px 16px; 
-            border-radius: 8px; 
+            border-radius: 10px; 
             cursor: pointer; 
             font-weight: 600; 
             font-size: 13px;
@@ -126,103 +152,111 @@ HTML
         }
         button:active { transform: scale(0.98); }
 
-        .btn-add { background-color: #06b6d4; color: white; width: 100%; margin-top: 12px; box-shadow: 0 2px 4px rgba(6,182,212,0.2); }
-        .btn-reset { background-color: #94a3b8; color: white; }
+        .btn-add { background-color: #1e293b; color: white; width: 100%; margin-top: 12px; }
+        .btn-add:hover { background-color: #0f172a; }
+        .btn-reset { background-color: #e2e8f0; color: #475569; }
+        .btn-reset:hover { background-color: #cbd5e1; }
+        
         .btn-calc { 
             width: 100%; 
-            font-size: 16px; 
-            padding: 14px; 
-            background: linear-gradient(135deg, #0284c7, #0369a1); 
+            font-size: 15px; 
+            padding: 15px; 
+            background: linear-gradient(135deg, #0891b2, #0369a1); 
             color: white; 
             margin-top: 15px; 
-            border-radius: 10px;
+            border-radius: 12px;
             font-weight: 700;
-            box-shadow: 0 4px 6px rgba(2,132,199,0.2);
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(3,105,161,0.25);
         }
 
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; background: white; border-radius: 8px; overflow: hidden; }
-        th, td { padding: 12px 8px; text-align: center; font-size: 13.5px; border-bottom: 1px solid #e2e8f0; }
-        th { background-color: #1e293b; color: white; font-weight: 600; font-size: 13px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; background: white; border-radius: 12px; overflow: hidden; border: 1px solid #f1f5f9; }
+        th, td { padding: 12px 10px; text-align: center; font-size: 13.5px; border-bottom: 1px solid #f1f5f9; }
+        th { background-color: #f8fafc; color: #475569; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
         
-        .btn-delete { background-color: rgba(220,53,69,0.1); color: var(--danger-color); padding: 5px 10px; font-size: 12px; }
-        .btn-delete:hover { background-color: var(--danger-color); color: white; }
+        .btn-delete { background-color: transparent; color: var(--danger-color); padding: 5px 10px; font-size: 12px; }
+        .btn-delete:hover { background-color: rgba(220,37,53,0.08); border-radius: 6px; }
 
         .result-box { 
             margin-top: 25px; 
-            padding: 20px; 
-            background: rgba(240, 253, 250, 0.9); 
-            border-radius: 16px; 
-            border: 1px solid #99f6e4; 
+            padding: 22px; 
+            background: rgba(240, 253, 250, 0.95); 
+            border-radius: 18px; 
+            border: 1px solid #ccfbf1; 
         }
         
         .summary-badge {
             background: white; 
-            padding: 12px; 
-            border-radius: 10px; 
+            padding: 14px; 
+            border-radius: 12px; 
             font-size: 13.5px; 
-            line-height: 1.7; 
+            line-height: 1.8; 
             margin-bottom: 15px;
             border: 1px solid #e2e8f0;
         }
 
-        .footer-credit { text-align: center; font-size: 11px; color: #64748b; margin-top: 25px; font-weight: 500; }
+        .footer-credit { text-align: center; font-size: 10.5px; color: #94a3b8; margin-top: 30px; font-weight: 500; letter-spacing: 0.3px; }
         
         @media (max-width: 520px) { 
             .grid-3 { grid-template-columns: 1fr; gap: 8px; } 
             .grid-2 { grid-template-columns: 1fr; gap: 8px; } 
             th, td { font-size: 12px; padding: 8px 4px; } 
-            input[type="time"] { padding: 8px; } 
         }
     </style>
 </head>
 <body oncontextmenu="return false;">
 
 <div class="container">
-    <h2>🏸 CHIA TIỀN VÃNG LAI (QUY ĐỔI RÚT GỌN)</h2>
-    <div class="author-tag">Phát triển bởi: <b>VĂN BẮC</b></div>
+    <div class="app-header">
+        <div class="app-brand">SMART<span>COURT</span></div>
+        <div class="app-sub">Hệ thống phân bổ chi phí vãng lai theo thời gian thực</div>
+        <div class="author-tag">DEVELOPED BY VAN BAC</div>
+    </div>
+    
+    <div class="divider"></div>
 
     <div class="section">
-        <div class="section-title">🕒 1. THÔNG TIN TIỀN SÂN & NHÓM CỐ ĐỊNH</div>
+        <div class="section-title">🕒 1. Cấu hình ca sân</div>
         <div class="grid-3" style="margin-bottom: 12px;">
             <div>
-                <label>Giá sân / 1 Giờ:</label>
+                <label>Giá sân / Giờ (k):</label>
                 <input type="number" id="pricePerHour" value="130" oninput="_0x4a2b(); _0x8f1c();">
             </div>
             <div>
-                <label>Giờ bắt đầu ca:</label>
+                <label>Giờ bắt đầu:</label>
                 <input type="time" id="groupStartTime" value="17:00" oninput="_0x4a2b(); _0x8f1c();">
             </div>
             <div>
-                <label>Giờ kết thúc ca:</label>
+                <label>Giờ kết thúc:</label>
                 <input type="time" id="groupEndTime" value="19:00" oninput="_0x4a2b(); _0x8f1c();">
             </div>
         </div>
         <div>
-            <label style="color: #0369a1;">👥 Số người chơi TRỌN CA (Đi từ đầu đến cuối ca):</label>
+            <label style="color: #0369a1;">👥 Số người chơi TRỌN CA (Đi từ đầu đến cuối):</label>
             <input type="number" id="fullTimeCount" value="4" class="full-time-input" oninput="_0x4a2b();">
         </div>
     </div>
 
     <div class="section">
-        <div class="section-title">🏸 2. CHI PHÍ PHÁT SINH</div>
+        <div class="section-title">🏸 2. Chi phí cầu</div>
         <div class="grid-2">
             <div>
-                <label>Số lượng cầu:</label>
+                <label>Số lượng quả:</label>
                 <input type="number" id="shuttleCount" value="5" oninput="_0x4a2b(); _0x8f1c();">
             </div>
             <div>
-                <label>Đơn giá cầu:</label>
+                <label>Đơn giá 1 quả (k):</label>
                 <input type="number" id="shuttlePrice" value="25" oninput="_0x4a2b(); _0x8f1c();">
             </div>
         </div>
-        <div style="margin-top: 12px; font-size: 13.5px; color: #475569; text-align: right; font-weight: 500;">
-            💰 Tổng tiền cầu (Chia đều): <span id="lblSubTotalShuttle" style="font-weight:700; color:#d97706;">0k</span>
+        <div style="margin-top: 12px; font-size: 13px; color: #475569; text-align: right; font-weight: 500;">
+            💰 Tổng tiền cầu: <span id="lblSubTotalShuttle" style="font-weight:700; color:#d97706;">0k</span>
         </div>
     </div>
 
     <div class="section">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-            <span class="section-title" style="margin:0;">👤 3. KHÁCH VÃNG LAI ĐI LẺ (Vào trễ / Ra sớm)</span>
+            <span class="section-title" style="margin:0;">👤 3. Khách lẻ vào trễ / ra sớm</span>
             <button class="btn-reset" onclick="_0x9e3f()">🔄 Làm Mới</button>
         </div>
         
@@ -230,8 +264,8 @@ HTML
             <thead>
                 <tr>
                     <th>Tên khách lẻ</th>
-                    <th>Khung giờ chơi</th>
-                    <th style="width: 55px;">Hành động</th>
+                    <th>Khung giờ</th>
+                    <th style="width: 55px;">Xóa</th>
                 </tr>
             </thead>
             <tbody id="memberList"></tbody>
@@ -242,7 +276,7 @@ HTML
     <button class="btn-calc" onclick="_0x7c3a()">⚡ TÍNH TOÁN VÀ XUẤT HÓA ĐƠN</button>
 
     <div class="result-box" id="resultSection" style="display: none;">
-        <b style="color: #0f766e; display:block; margin-bottom: 12px; font-size: 16px; text-transform: uppercase; letter-spacing: 0.5px;">📊 BẢNG CHI TIẾT THANH TOÁN:</b>
+        <b style="color: #0f766e; display:block; margin-bottom: 12px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">📊 Kết quả phân chia:</b>
         <div class="summary-badge">
             • Tổng thời gian ca: <span id="resTotalHours" style="font-weight:700;">0</span> tiếng<br>
             • Tổng tiền sân: <span id="resTotalCourt" style="font-weight:700; color:var(--danger-color);">0k</span><br>
@@ -251,19 +285,19 @@ HTML
         
         <table>
             <thead>
-                <tr style="background-color: #0f766e;">
-                    <th>Thành viên / Nhóm</th>
-                    <th>Thời gian</th>
-                    <th>Tiền sân</th>
-                    <th>Tiền cầu</th>
-                    <th>Tổng trả (Mỗi người)</th>
+                <tr style="background-color: #f8fafc; color: #475569;">
+                    <th style="color: #475569;">Thành viên / Nhóm</th>
+                    <th style="color: #475569;">Thời gian</th>
+                    <th style="color: #475569;">Tiền sân</th>
+                    <th style="color: #475569;">Tiền cầu</th>
+                    <th style="color: #475569;">Tổng trả</th>
                 </tr>
             </thead>
             <tbody id="resultTableBody"></tbody>
         </table>
     </div>
 
-    <div class="footer-credit">© 2026 Developed by Van Bac. All rights reserved.</div>
+    <div class="footer-credit">SMART COURT APPLICATION • POWERED BY VAN BAC</div>
 </div>
 
 <script>
@@ -337,14 +371,14 @@ HTML
                 let tP = sampleFull.courtCost + ePP;
                 const tr = document.createElement("tr");
                 tr.style.background = "#f0fdf4"; 
-                tr.innerHTML = `<td style="text-align:left; font-weight:bold; color:#166534;">👥 Khách Trọn Ca (${fCount} người)</td><td>${sampleFull.playedTime} phút</td><td style="color:var(--success-color); font-weight:500;">${_0x3f5d(sampleFull.courtCost / 1000)}</td><td style="color:var(--accent-color); font-weight:500;">${_0x3f5d(ePP / 1000)}</td><td style="color:#b91c1c; font-weight:bold; font-size:14px;">${_0x3f5d(tP / 1000)} / người</td>`;
+                tr.innerHTML = `<td style="text-align:left; font-weight:700; color:#166534;">👥 Khách Trọn Ca (${fCount} người)</td><td>${sampleFull.playedTime} phút</td><td style="color:var(--success-color); font-weight:500;">${_0x3f5d(sampleFull.courtCost / 1000)}</td><td style="color:var(--accent-color); font-weight:500;">${_0x3f5d(ePP / 1000)}</td><td style="color:#b91c1c; font-weight:bold; font-size:14px;">${_0x3f5d(tP / 1000)} / người</td>`;
                 rB.appendChild(tr);
             }
         }
         
         pl.filter(p => !p.isFull).forEach(p => { 
             let tP = p.courtCost + ePP; const tr = document.createElement("tr"); 
-            tr.innerHTML = `<td style="text-align:left; font-weight:bold; color:#334155;">👤 ${p.name}</td><td>${p.playedTime} phút</td><td style="color:var(--success-color); font-weight:500;">${_0x3f5d(p.courtCost / 1000)}</td><td style="color:var(--accent-color); font-weight:500;">${_0x3f5d(ePP / 1000)}</td><td style="color:#b91c1c; font-weight:bold; font-size:14px;">${_0x3f5d(tP / 1000)}</td>`; 
+            tr.innerHTML = `<td style="text-align:left; font-weight:700; color:#334155;">👤 ${p.name}</td><td>${p.playedTime} phút</td><td style="color:var(--success-color); font-weight:500;">${_0x3f5d(p.courtCost / 1000)}</td><td style="color:var(--accent-color); font-weight:500;">${_0x3f5d(ePP / 1000)}</td><td style="color:#b91c1c; font-weight:bold; font-size:14px;">${_0x3f5d(tP / 1000)}</td>`; 
             rB.appendChild(tr); 
         }); 
         
